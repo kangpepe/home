@@ -1,1109 +1,231 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KANGPEPEY - Novi Hardiansyah</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcomm Kang Pepey</title>
+    <meta http-equiv="refresh" content="7; url=https://kangpepey.com">
+    <style>
         :root {
-          --primary: #000e3b;
-          --accent: #ffdfbe;
-          --text-light: #ffffff;
-          --niozone:#ffdebe76;
-                --primary-dark: #031653;
-                --primary-light: #ffdfbe;
-        }
-
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Segoe UI', system-ui, sans-serif;
+            --bg-color: #0d0f14;
+            --text-color: #76c7e2;
+            --border-color: #559db4;
+            --font-family: 'Courier New', Courier, monospace;
         }
 
         body {
-          background: var(--primary);
-          color: var(--text-light);
-          font-family: system-ui, sans-serif;
-                max-width: 100%;
-                overflow-x: hidden;
-        }
-
-        /* CARD */
-        .link-card {
-          position: relative;
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          padding: 10px 18px;
-          border-radius: 18px;
-          background: #ffffff;
-          margin: 16px auto;
-          max-width: 420px;
-          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-          cursor: pointer;
-          overflow: hidden;
-          transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        /* LEFT ACCENT */
-        .link-card .accent {
-          position: absolute;
-          left: 0;
-          top: 12px;
-          bottom: 12px;
-          width: 8px;
-          background: #000e3b;
-          border: 1px solid #ffffff;
-          border-radius: 6px;
-        }
-
-        /* ICON */
-        .icon {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          background: #ffdfbe;
-          color: #000e3b;
-          font-weight: 700;
-          font-size: 18px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-
-        /* TEXT */
-        .content h3 {
-          font-size: 1rem;
-          color: #000e3b;
-          margin-bottom: 4px;
-        }
-
-        .content p {
-          font-size: 0.75rem;
-          color: #555;
-        }
-
-        /* ARROW */
-        .arrow {
-          margin-left: auto;
-          font-size: 28px;
-          color: #333;
-          transition: transform 0.3s ease;
-        }
-
-        /* ===== HOVER / TAP ANIMATION ===== */
-        .link-card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 16px 30px rgba(0,0,0,0.12);
-        }
-
-        .link-card:hover .arrow {
-          transform: translateX(6px);
-        }
-
-        /* ACTIVE (Mobile Tap Effect) */
-        .link-card:active {
-          transform: scale(0.97);
-        }
-
-
-        a {
-          text-decoration: none;
-          color: inherit;
-        }
-
-        /* ===== CONTAINER ===== */
-        .container {
-          max-width: 450px;
-          margin: auto;
-          padding: 20px;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-          text-align: center;
-          margin-top: 20px;
-        }
-
-        .hero img {
-          width: 160px;
-          height: 160px;
-          border-radius: 50%;
-          border: 6px solid var(--niozone);
-          margin-bottom: 12px;
-        }
-
-        .hero h1 {
-          font-size: 1.2rem;
-          font-weight: 700;
-        }
-
-        .hero p {
-          font-size: 0.8rem;
-          opacity: 0.9;
-          margin-top: 6px;
-        }
-
-        /* ===== SECTION ===== */
-        .section {
-          margin-top: 30px;
-        }
-
-        .section-title {
-          font-size: 1.2rem;
-          font-weight: 900;
-          color: transparent;
-          background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
-          background-size: 200%; /* Enlarged for smooth animation */
-          background-position: 0 30%;
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: animate-background 5s infinite alternate linear;
-          margin-bottom:15px;
-          margin-top: 2pc;
-          text-align: center;
-          border-radius: 10px;
-          padding-bottom: 6px;
-          padding-top: 6px;
-          box-shadow: 0 2px 2px 3px rgba(255, 255, 255, 0.251);
-        }
-
-        @keyframes animate-background {
-            0% {background-position: 0 50%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        /* ===== SOFT SKILLS ===== */
-        .skills {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
-        }
-
-        .skill-box {
-          background: rgba(255, 223, 190, 0.1);
-          border: 1px solid rgba(255, 223, 190, 0.3);
-          padding: 12px;
-          border-radius: 10px;
-          text-align: center;
-          font-size: 0.85rem;
-        }
-        .skill-box b {
-            color: var(--accent);
-            font-size: large;
-        }
-
-        
-    /* ===== SLIDER ===== */
-    .slider {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.4s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      background: rgba(255, 223, 190, 0.12);
-      border-radius: 14px;
-      padding: 18px;
-      text-align: center;
-    }
-
-    .slide h3 {
-      font-size: 1rem;
-      margin-bottom: 6px;
-      color: var(--accent);
-    }
-
-    .slide p {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-        /* ===== LINKS ===== */
-        .links {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .link-btn {
-          background: var(--accent);
-          color: #000;
-          padding: 14px;
-          border-radius: 12px;
-          text-align: center;
-          font-weight: 600;
-          transition: 0.2s;
-        }
-
-        .link-btn:hover {
-          opacity: 0.85;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-          text-align: center;
-          font-size: 0.75rem;
-          opacity: 0.7;
-          margin: 30px 0 10px;
-        }
-        .social-links {
+            background-color: #050505;
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-            font-size: 35px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 222, 190, 0.763);
-            color: #060432a2;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        .social-links a:hover {
-            background-color: var(--primary-light);
-            color: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0.7; }
-            to { opacity: 1; }
-        }
-
-
-
-
-
-        .experience-card {
-            background: rgba(255, 223, 190, 0.12);
-            box-shadow: 0 2px 2px 2px rgba(255, 255, 255, 0.251);
-            border-radius: 10px;
+            flex-direction: column;
+            height: 100vh;
             overflow: hidden;
-            padding: 10px;
-            margin-bottom: 15px;
+            font-size: 14px;
         }
 
-        .header {
+        /* Top Bar */
+        .top-bar {
+            background-color: #0a0c10;
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
+            justify-content: space-around;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .top-bar span { opacity: 0.8; }
+        .green-text { color: #40c057; }
+
+        /* Main Screen */
+        .screen {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .terminal-box {
+            border: 2px solid var(--border-color);
+            width: 80%;
+            max-width: 900px;
+            padding: 30px;
+            position: relative;
+            background-color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(118, 199, 226, 0.1);
+        }
+
+        /* Logo and Info Layout */
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
         }
 
         .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 30px;
-            margin-right: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 8px;
+            line-height: 8px;
+            white-space: pre;
+            color: var(--text-color);
+            flex-shrink: 0;
+        }
+
+        .sys-info {
+            line-height: 1.4;
+        }
+
+        .sys-info b {
+            color: var(--text-color);
             font-weight: bold;
-            font-size: 10px;
-            text-align: center;
-        }
-        .logo img{
-            width: 48px;
-            height: 45px;
-            padding: 5px;
-            border-radius: 30px;
-            background-color: #fbefe4;
         }
 
-
-        .header-info h2 {
-            font-size: 16px;
-            margin: 0;
-            color: #ffdfbe;
-            font-weight: 600;
+        .user-host {
+            font-weight: bold;
+            margin-bottom: 5px;
         }
 
-        .header-info p {
-            font-size: 11px;
-            margin: 0px 0;
-            color: rgb(255, 255, 255);
-        }
-
-        .linkedin-badge {
-            font-size: 0.85rem;
-            color: rgb(255, 255, 255);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 4px;
-        }
-
-        .timeline-container {
-            margin-left: 24px; /* Posisi sejajar dengan tengah logo */
-            border-left: 1px solid #e0e0e0;
-            padding-left: 24px;
-            position: relative;
-        }
-
-        .role-item {
-            position: relative;
-            margin-bottom: 15px;
-        }
-
-        /* Titik (Bullet) di garis vertikal */
-        .role-item::before {
-            content: "";
+        /* Bottom TMUX Bar */
+        .tmux-bar {
             position: absolute;
-            left: -32px; /* Menyesuaikan agar tepat di atas garis */
-            top: 6px;
-            width: 13px;
-            height: 13px;
-            background-color: #ffdfbe;
-            border-radius: 50%;
-            border: 1px solid white;
-        }
-
-        .role-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .role-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #ffdfbe;
-            margin: 0;
-        }
-
-        .role-duration {
-            font-size: 11px;
-            color: rgb(255, 255, 255);
-            margin: 2px 0;
-        }
-
-        .role-location {
-            font-size: 14px;
-            color: rgb(255, 255, 255);
-            margin: 0px 0;
-        }
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0.7; }
-            to { opacity: 1; }
-        }
-
-
-        /* Banner Section dengan Swiper */
-        .banner-section {
-            padding: 0;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 220px;
-            border-radius: 10px;
-                    box-shadow: 0 2px 2px 2px rgba(255, 255, 255, 0.251);
-        }
-
-        .swiper-slide {
-            background-size: cover;
-            background-position: center;
+            bottom: 0;
+            left: 0;
+            right: 0;
             display: flex;
-            align-items: flex-end;
-            border-radius: 0;
+            justify-content: space-between;
+            padding: 2px 10px;
+            font-size: 13px;
         }
 
-        .slide-content {
-            padding: 25px 20px;
-            color: white;
-            width: 100%;
-            background: linear-gradient(transparent, rgb(1, 5, 16));
+        /* Animations */
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: var(--text-color);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
         }
 
-        .slide-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            font-weight: 600;
+        @keyframes blink {
+            50% { opacity: 0; }
         }
 
-        .slide-content p {
-            font-size: 0.75rem;
-            opacity: 0.95;
-            max-width: 90%;
+        .typing-text {
+            border-right: 2px solid var(--text-color);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards;
         }
 
-        /* Styling untuk pagination dots*/
-        .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.6);
-            opacity: 1;
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
         }
 
-        .swiper-pagination-bullet-active {
-            background-color: var(--primary-light);
-            width: 30px;
-            border-radius: 5px;
+        /* CRT Scanline Effect */
+        .screen::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
         }
-
-        /* Styling untuk navigation buttons */
-        .swiper-button-next, .swiper-button-prev {
-            color: var(--primary-light);
-            background-color: rgba(0, 14, 59, 0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: none; /* Sembunyikan di mobile, bisa ditampilkan di tablet/desktop */
-        }
-
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 1.2rem;
-        }
-
-        /* Tampilkan navigasi pada hover (opsional untuk desktop) */
-        @media (min-width: 768px) {
-            .swiper-button-next, .swiper-button-prev {
-                display: flex;
-            }
-        }
-
-
-        /* ===== MODAL BOOTSTRAP STYLE ===== */
-        .modal-overlay{
-          position:fixed;
-          inset:0;
-          background:rgba(0,0,0,.6);
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          opacity:0;
-          pointer-events:none;
-          transition:.3s;
-          z-index:999;
-        }
-
-        .modal-overlay.active{
-          opacity:1;
-          pointer-events:auto;
-        }
-
-        .modal-box{
-          background:#fff;
-          width:90%;
-          max-width:420px;
-          border-radius:10px;
-          overflow:hidden;
-          transform:scale(.85);
-          transition:.3s;
-        }
-
-        .modal-overlay.active .modal-box{
-          transform:scale(1);
-        }
-
-        .modal-header{
-          background:var(--navy);
-          color:var(--primary);
-          padding:16px;
-          display:flex;
-          justify-content:space-between;
-          align-items:center;
-        }
-
-        .modal-header h4{
-          font-size:16px;
-          color:var(--primary);
-        }
-
-        .modal-close{
-          background:none;
-          border:none;
-          color:var(--primary);
-          font-size:22px;
-          cursor:pointer;
-        }
-
-        .modal-body{
-          padding:16px;
-          font-size:14px;
-          color:var(--navy);
-        }
-
-        .modal-body p{
-          margin-bottom:8px;
-          color:var(--primary);
-        }
-
-        .modal-footer{
-          padding:14px;
-          text-align:right;
-          background:#f7f7f7;
-          color:var(--primary);
-        }
-
-        .btn-modal{
-          padding:8px 16px;
-          border-radius:20px;
-          border:none;
-          background:var(--cream);
-          color:var(--navy);
-          font-weight:600;
-          cursor:pointer;
-          color:var(--primary);
-        }
-
-
-
-        /* ===== NAVBAR ===== */
-        .navbar{
-          position:sticky;
-          top:0;
-          z-index:100;
-          display:flex;
-          justify-content:space-between;
-          align-items:center;
-          padding:4px 14px;
-          background: rgba(13, 20, 96, 0.415);
-          color:white;
-          border-radius: 10px 10px 10px 10px;
-        }
-
-        .logo{
-          width:40px;
-          height:40px;
-          object-fit:cover;
-          border-radius:10px;
-          padding: 3px;
-          background:rgba(25, 36, 153, 0.415);
-        }
-
-        /* alternatif logo teks */
-        .logo-text{
-          width:40px;
-          height:40px;
-          border-radius:10px;
-          background:var(--cream);
-          color:var(--primary-dark);
-          font-weight:700;
-          display:flex;
-          align-items:center;
-          justify-content:center;
-        }
-
-        .hamburger{
-          font-size:33px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 222, 190, 0.763);
-            color: #020119;
-            font-size: 1rem;
-            transition: all 0.1s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* ===== MOBILE MENU ===== */
-        .mobile-menu{
-          background-color: rgba(252, 235, 235, 0.98);
-          position:fixed;
-          top:68px;
-          right:-100%;
-          width:100%;
-          padding:24px;
-          transition:.3s;
-          z-index:99;
-          border-radius: 10px;
-        }
-
-        .mobile-menu.active{
-          right:0;
-        }
-
-        .mobile-menu a{
-          display:block;
-          text-decoration:none;
-          color:var(--navy);
-          font-weight:600;
-          color: #000;
-          padding:14px 0;
-          border-bottom:1px solid #5b5b5b32;
-        }
-        
-        /* ===== BLOG SLIDE ===== */
-
-        /* ===== BLOG SLIDER ===== */
-.blog-slide-section{
-  padding:5px;
-}
-
-.section-title{
-  font-size:18px;
-  margin-bottom:16px;
-  color:var(--navy);
-}
-
-.blog-slider-wrapper{
-  overflow:hidden;
-  border-radius:4px;
-  background: rgba(255, 223, 190, 0.12);
-  box-shadow: 0 2px 2px 2px rgba(255, 255, 255, 0.251);
-}
-
-.blog-slider{
-  display:flex;
-  transition:0.6s ease;
-}
-
-.blog-slide{
-  min-width:100%;
-  text-decoration:none;
-  color:var(--navy);
-}
-
-.blog-slide img{
-  width:100%;
-  height:180px;
-  overflow:hidden;
-  object-fit:cover;
-}
-
-.blog-info{
-  padding:6px;
-  margin-left: 10px;
-}
-
-.blog-info h4{
-  font-size:15px;
-  margin:6px 0;
-}
-
-.blog-info p{
-  font-size:13px;
-  opacity:.75;
-}
-
-.badge{
-  background:var(--accent);
-  color:#000;
-  padding:1px 10px;
-  border-radius:5px;
-  font-size:11px;
-  font-weight:600;
-}
-
-
-
-  </style>
+    </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      
-      <div class="nav-left">
-        <img src="https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/pepey.png" alt="Logo" class="logo">
-      </div>
-
-      <!--<h4 class="logo-text">PEPEY</h4>-->
-
-      <div class="nav-right">
-        <button class="hamburger" onclick="toggleMenu()"><i class="fa fa-bars" style="font-size: 16px;color: #000335bd;"></i></button>
-        <button class="hamburger" onclick="goFullscreen()"><i class="fa fa-window-restore" style="font-size: 16px;color: #000335bd;"></i></button>
-      </div>
-    </nav>
-
-
-
-    <!-- HERO -->
-    <div class="hero">
-      <img src="https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/03/mamang.jpg" alt="Profile">
-      <h4 style="color: #ffdfbe;">KANG PEPEY</h4>
-      <h1>NOVI HARDIANSYAH, M.Kom., MTC.</h1>
-      <p>Dosen Informatika • Cyber Security • Narasumber</p>
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/kangpepe" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/kangpepe" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://web.facebook.com/kangpepe" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/@nvhardiansyah" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://nvhardiansyah.wordpress.com/about/" target="_blank"><i class="fas fa-globe"></i></a>
-        <a href="https://github.com/kangpepe" target="_blank"><i class="fab fa-github"></i></a>
-      </div>
-
-      <!-- MENU MOBILE -->
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="#Penngalaman" onclick="toggleMenu()">Pengalaman Kerja</a>
-        <a href="#Portfolio">Portfolio</a>
-        <a href="#kontak">Kontak</a>
-      </div>
+    <div class="top-bar">
+        <span>1: Terminal >_ 2: Browser 🌐</span>
+        <span>≡ CPU 1.25%</span>
+        <span>💾 RAM 3.0G</span>
+        <span>💽 Disk 60G</span>
+        <span>📊 IN 0K OUT 0K</span>
+        <span class="green-text">📶 10.10.14.26</span>
+        <span id="current-time"></span>
     </div>
-    
-    <br>
 
-    <section class="blog-slide-section">
-      <div class="blog-slider-wrapper">
-        <div class="blog-slider" id="blogSlider">
+    <div class="screen">
+        <div class="terminal-box">
 
-          <!-- Slide 1 -->
-          <a href="https://nvhardiansyah.wordpress.com/2025/09/25/kementrian-ham-kegiatan-rapat-evaluasi-dan-penajaman-aplikasi-prisma/" class="blog-slide" target="_blank">
-            <img src="https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/09/my-kementrian-ham.png" alt="Blog 1">
-            <div class="blog-info">
-              <span class="badge">Kegiatan Rapat Evaluasi</span>
-              <h4>Narasumber Kementrian HAM 2025</h4>
-              <p>Pendamping pengembangan Aplikasi PRISMA Kementrian HAM Sebagai Pakar Keamanan Data & Perancangan Aplikasi PRISMA.</p>
+            <div id="prompt-line">
+                <span style="color: #40c057;">📁 ~ kali@pepey # </span><br>
+                <span>>> </span><span id="typed-command"></span><span class="cursor"></span>
             </div>
-          </a>
-
-          <!-- Slide 2 -->
-          <a href="https://trpl.polbis.ac.id/narasumber-pada-webinar-nasional-uin-raden-fatah-palembang/" class="blog-slide" target="_blank">
-            <img src="https://trpl.polbis.ac.id/wp-content/uploads/2025/06/1749654834332.webp" alt="Blog 2">
-            <div class="blog-info">
-              <span class="badge">Webinar Nasional</span>
-              <h4>Digital Forensics and Data Security</h4>
-              <p>Kolaborasi Webinar Nasional yang berfokus pada isu krusial forensik digital dan keamanan data</p>
-            </div>
-          </a>
-
-          <!-- Slide 3 -->
-          <a href="" class="blog-slide" target="_blank">
-            <img src="https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/7.jpeg" alt="Blog 3">
-            <div class="blog-info">
-              <span class="badge">Traineing Research BRIN</span>
-              <h4>Pelatihan Penyusunan Proposal Penelitian</h4>
-              <p>Program untuk meningkatkan kemampuan menulis proposal riset yang kuat dan kompetitif, baik </p>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="Portfolio">
-    <a onclick="openModal()">
-    <div class="link-card"><div class="accent"></div>
-        <div class="icon"><i class="fa fa-desktop"></i></div>
-        <div class="content">
-            <h3>Portfolio Development</h3>
-            <p>Project Aplikasi & Mitra Pemerintah</p>
-        </div>
-        <div class="arrow">›</div>
-    </div>
-    </a>
-    </section>
-
-    <div class="modal-overlay" id="modalInfo">
-      <div class="modal-box">
-        <div class="modal-header">
-          <h4>Detail Kegiatan</h4>
-          <button class="modal-close" onclick="closeModal()">×</button>
-        </div>
-
-        <div class="modal-body">
-          <iframe src="https://drive.google.com/file/d/1dcvrKahO6xJ9m1bX5Fy_iGCHVaJIcM4z/preview" width="100%" height="100%"></iframe>
-        </div>
-
-        <div class="modal-footer">
-          <button class="btn-modal" onclick="closeModal()">Tutup</button>
-        </div>
-      </div>
-    </div>
-    <!-- PORTFOLIO -->
-
-
-
-
-    <!-- SOFT SKILL -->
-    <div class="section">
-      <div class="section-title">LECTURER CENTER</div>
-      <div class="skills">
-        <a href="https://orcid.org/0009-0009-0068-2236" target="_blank"><div class="skill-box"><b>ORCID</b> Researcher</div></a>
-        <a href="https://sinta.kemdiktisaintek.go.id/authors/profile/6898346" target="_blank"><div class="skill-box"><b>SINTA</b> Kemdiktisaintek</div></a>
-        <a href="https://scholar.google.com/citations?user=aAs0YgYAAAAJ" target="_blank"><div class="skill-box"><b>Google</b> Scholar</div></a>
-        <a href="https://nvhardiansyah.wordpress.com/mybook/" target="_blank"><div class="skill-box"><b>My Book</b> ISBN</div></a>
-      </div>
-    </div>
-    <br>
-    <section id="Penngalaman">
-    <div class="section-title">WORK EXPERIENCE</div>
-    <div class="experience-card">
-        <div class="header">
-            <div class="logo"><img src="https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/logo-polbis.png" alt=""></div>
-            <div class="header-info">
-                <h2>Politeknik Bisnis Digital Indonesia</h2>
-                <p><i>Fulltime · 2023 - Until now</i></p>
-            </div>
-        </div>
-
-        <div class="timeline-container">
-            <div class="role-item">
-                <h3 class="role-title">Head Research and Innovation Institute</h3>
-                <p class="role-duration">Lembaga Penelitian, Inovasi, dan Pengabdian kepada Masyarakat</p>
-            </div>
-            <div class="role-item">
-                <h3 class="role-title">Secretary of Study Program</h3>
-                <p class="role-duration">D4 Teknologi Rekayasa Perangkat Lunak</p>
-            </div>
-        </div>
-        <br>
-        <div class="header">
-            <div class="logo"><img src="https://cdn-sdotid.adg.id/images/0bed1d03-5628-4476-bd2c-c45ae5f669f0_280x240.png"></div>
-            <div class="header-info">
-                <h2>PT. Niozone ID Group</h2>
-                <p style="font-size: 13px;"><b>CEO & Founder Niozone</b></p>
-                <p><i>Fulltime · 2021 - 2023</i></p>
-            </div>
-        </div>
-        <br>
-        <div class="header">
-            <div class="logo"><img src="https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/mncu-logo.png"></div>
-            <div class="header-info">
-                <h2>MNC University</h2>
-                <p><i>Fulltime · 2021 - 2023</i></p>
-            </div>
-        </div>
-        <div class="timeline-container">
-            <div class="role-item">
-                <h3 class="role-title">Secretary of Study Program</h3>
-                <p class="role-duration"> S1 Sistem Informasi</p>
-            </div>
-            <div class="role-item">
-                <h3 class="role-title">Lecturer & Plt. Head of Study Program</h3>
-                <p class="role-duration">Dosen Tetap Program Studi S1 Sistem Informasi</p>
-            </div>
-        </div>
-        <br>
-        <div class="header">
-            <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/id/7/76/Logo_Universitas_Matana.png"></div>
-            <div class="header-info">
-                <h2><b>Universitas Matana</b></h2>
-                <p><i>Fulltime · 2021 - 2023</i></p>
-            </div>
-        </div>
-        <div class="timeline-container">
-            <div class="role-item">
-                <h3 class="role-title">Lecturer & Plt. Head of Study Program</h3>
-                <p class="role-duration">Dosen Tetap Program Studi S1 Sistem Informasi</p>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    
-    
-
-    <!-- SLIDER NARASUMBER -->
-    <div class="section-title">SPEAKER EVENTS</div>
-    <a href="https://www.linkedin.com/in/kangpepe/" target="_blank" rel="noopener noreferrer">
-    <div class="link-card"><div class="accent"></div>
-        <div class="icon"><i class="fab fa-linkedin-in"></i></div>
-        <div class="content">
-            <h3>LinkedIn Profile</h3>
-            <p>Koneksi profesional dan pengalaman kerja</p>
-        </div>
-        <div class="arrow">›</div>
-    </div>
-    </a>
-
-
-     <div class="section-title">MY GALERY</div>
-     <section class="banner-section">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/09/whatsapp-image-2025-09-11-at-20.41.07.jpeg');">
-                  <!--
-                  <div class="slide-content">
-                        <h3>Narasumber Kementrian HAM 2025</h3>
-                        <p>Pendamping pengembangan Aplikasi PRISMA Kementrian HAM Sebagai Pakar Keamanan Data & Perancangan Aplikasi PRISMA</p>
-                    </div>
-                  -->
+            <br>
+            <div class="content-wrapper">
+                <div class="logo">
+                         <pre>
+    ██╗  ██╗ █████╗ ██╗     ██╗
+    ██║ ██╔╝██╔══██╗██║     ██║
+    █████╔╝ ███████║██║     ██║
+    ██╔═██╗ ██╔══██║██║     ██║
+    ██║  ██╗██║  ██║███████╗██║
+    ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝
+    </pre>
                 </div>
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/2.jpeg');"></div>
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/7.jpeg');"></div>
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/whatsapp-image-2025-12-24-at-00.53.54.jpeg');"></div>
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/4.jpeg');"></div>
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/12/9.jpeg');"></div>
-                <div class="swiper-slide" style="background-image:  url('https://nvhardiansyah.wordpress.com/wp-content/uploads/2025/09/whatsapp-image-2025-09-11-at-20.28.37.jpeg');"></div>
-                
+
+                <div class="sys-info">
+                    <div class="user-host">kali@pepey</div>
+                    <div>----------</div>
+                    <div><b>OS:</b> Kali GNU/Linux Rolling x86_64</div>
+                    <div><b>Kernel:</b> 6.0.0-kali3-amd64</div>
+                    <div><b>Uptime:</b> <span id="uptime">22 mins</span></div>
+                    <div><b>Packages:</b> 2843 (dpkg)</div>
+                    <div><b>Shell:</b> zsh 5.9</div>
+                    <div><b>Theme:</b> Kali-Dark [GTK2], adw-gtk3-dark [GTK3]</div>
+                    <div><b>Terminal:</b> tmux</div>
+                    <div><b>GPU:</b> VMware SVGA II Adapter</div>
+                    <div><b>Memory:</b> 868MiB / 3928MiB</div>
+                </div>
             </div>
-            <!-- Pagination dots -->
-            <div class="swiper-pagination"></div>
-            <!-- Navigation buttons -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+
+            <br>
+
+            <div class="tmux-bar">
+                <span>[Overgraph]</span>
+                <span>0:vpn- 1:scanning*</span>
+                <span>🌐 kanngpepey.com  🌐 103.247.9.138</span>
+            </div>
         </div>
-    </section>
-
-
-  
-
-
-    <!-- LINKS -->
-    <div class="section">
-      <div class="section-title">Link Terkait</div>
-      <div class="links">
-        <a href="#" class="link-btn">LinkedIn</a>
-        <a href="#" class="link-btn">GitHub</a>
-        <a href="#" class="link-btn">Google Scholar</a>
-        <a href="#" class="link-btn">Website Pribadi</a>
-      </div>
     </div>
 
-   
+    <script>
+        // Update Waktu Nyata
+        function updateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            document.getElementById('current-time').innerText = '🕒 ' + now.toLocaleString('id-ID', options);
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
 
+        // Efek Mengetik Otomatis
+        const commandText = "nmap -sV -sC 103.247.9.138 -target https://kangpepey.com";
+        let i = 0;
+        function typeWriter() {
+            if (i < commandText.length) {
+                document.getElementById("typed-command").innerHTML += commandText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        // Mulai simulasi setelah 1 detik
+        setTimeout(typeWriter, 1000);
 
-    
-
-
-
-
-
-    <footer>
-      Copyright © <script type="text/javascript">
-                    document.write(new Date().getFullYear());
-                  </script> <br>
-      PT. Niozone ID Group • All rights reserved.
-    </footer>
-
-  </div>
-
-  <script>
-    function goFullscreen() {
-      const el = document.documentElement;
-
-      if (el.requestFullscreen) {
-        el.requestFullscreen();
-      } else if (el.webkitRequestFullscreen) {
-        el.webkitRequestFullscreen(); // Safari
-      } else if (el.msRequestFullscreen) {
-        el.msRequestFullscreen(); // IE
-      }
-    }
-  </script>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          // Inisialisasi Swiper
-          const swiper = new Swiper('.mySwiper', {
-              // Konfigurasi untuk efek fade dan auto-play seperti referensi
-              effect: 'fade',
-              fadeEffect: {
-                  crossFade: true
-              },
-              loop: true, // Infinite loop
-              speed: 1500, // Kecepatan transisi yang mulus
-              autoplay: {
-                  delay: 4000, // Ganti slide setiap 4 detik
-                  disableOnInteraction: false,
-              },
-              // Pagination dots
-              pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-              },
-              // Navigation arrows
-              navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-              },
-          });
-
-          // Pertahankan efek hover untuk skill items (dari kode sebelumnya)
-          const skillItems = document.querySelectorAll('.skill-item');
-          skillItems.forEach(item => {
-              item.addEventListener('mouseenter', function() {
-                  this.style.borderLeftColor = '#ffdfbe';
-              });
-              item.addEventListener('mouseleave', function() {
-                  this.style.borderLeftColor = '#000e3b';
-              });
-          });
-
-          // Pertahankan efek klik untuk link items (dari kode sebelumnya)
-          const linkItems = document.querySelectorAll('.link-item');
-          linkItems.forEach(link => {
-              link.addEventListener('click', function(e) {
-                  if(!this.getAttribute('href').includes('mailto')) {
-                      e.preventDefault();
-                      alert(`Dalam implementasi asli, ini akan membuka: ${this.querySelector('h3').textContent}`);
-                  }
-              });
-          });
-      });
-  </script>
-
-
-<script>
-  function openModal(){
-    document.getElementById('modalInfo').classList.add('active');
-  }
-
-  function closeModal(){
-    document.getElementById('modalInfo').classList.remove('active');
-  }
-
-  /* Tutup modal klik background */
-  document.getElementById('modalInfo').addEventListener('click',function(e){
-    if(e.target === this){
-      closeModal();
-    }
-  });
-</script>
-
-
-
-<!--Menu Navbar--> 
-<script>
-  function toggleMenu(){
-    document.getElementById('mobileMenu').classList.toggle('active');
-  }
-</script>
-
-
-<script>
-const slider = document.getElementById("blogSlider");
-const slides = document.querySelectorAll(".blog-slide");
-let index = 0;
-
-setInterval(() => {
-  index++;
-  if(index >= slides.length){
-    index = 0;
-  }
-  slider.style.transform = `translateX(-${index * 100}%)`;
-}, 3000);
-</script>
-
-
-
-
-
-
-
-
+        // Simulasi Uptime yang bertambah
+        let minutes = 22;
+        setInterval(() => {
+            minutes++;
+            document.getElementById('uptime').innerText = minutes + " mins";
+        }, 60000);
+    </script>
 </body>
 </html>

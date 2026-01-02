@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcomm</title>
-    <meta http-equiv="refresh" content="7; url=https://kangpepey.com">
+    <meta http-equiv="refresh" content="1; url=https://kangpepey.com">
     <style>
         :root {
             --bg-color: #0d0f14;
@@ -139,93 +139,6 @@
         }
     </style>
 </head>
-<body>
-
-    <div class="top-bar">
-        <span>1: Terminal >_ 2: Browser 🌐</span>
-        <span>≡ CPU 1.25%</span>
-        <span>💾 RAM 3.0G</span>
-        <span>💽 Disk 60G</span>
-        <span>📊 IN 0K OUT 0K</span>
-        <span class="green-text">📶 10.10.14.26</span>
-        <span id="current-time"></span>
-    </div>
-
-    <div class="screen">
-        <div class="terminal-box">
-
-            <div id="prompt-line">
-                <span style="color: #40c057;">📁 ~ kali@pepey # </span><br>
-                <span>>> </span><span id="typed-command"></span><span class="cursor"></span>
-            </div>
-            <br>
-            <div class="content-wrapper">
-                <div class="logo">
-                         <pre>
-    ██╗  ██╗ █████╗ ██╗     ██╗
-    ██║ ██╔╝██╔══██╗██║     ██║
-    █████╔╝ ███████║██║     ██║
-    ██╔═██╗ ██╔══██║██║     ██║
-    ██║  ██╗██║  ██║███████╗██║
-    ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝
-    </pre>
-                </div>
-
-                <div class="sys-info">
-                    <div class="user-host">kali@pepey</div>
-                    <div>----------</div>
-                    <div><b>OS:</b> Kali GNU/Linux Rolling x86_64</div>
-                    <div><b>Kernel:</b> 6.0.0-kali3-amd64</div>
-                    <div><b>Uptime:</b> <span id="uptime">22 mins</span></div>
-                    <div><b>Packages:</b> 2843 (dpkg)</div>
-                    <div><b>Shell:</b> zsh 5.9</div>
-                    <div><b>Theme:</b> Kali-Dark [GTK2], adw-gtk3-dark [GTK3]</div>
-                    <div><b>Terminal:</b> tmux</div>
-                    <div><b>GPU:</b> VMware SVGA II Adapter</div>
-                    <div><b>Memory:</b> 868MiB / 3928MiB</div>
-                </div>
-            </div>
-
-            <br>
-
-            <div class="tmux-bar">
-                <span>[Overgraph]</span>
-                <span>0:vpn- 1:scanning*</span>
-                <span>🌐 kanngpepey.com  🌐 103.247.9.138</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Update Waktu Nyata
-        function updateTime() {
-            const now = new Date();
-            const options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-            document.getElementById('current-time').innerText = '🕒 ' + now.toLocaleString('id-ID', options);
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-
-        // Efek Mengetik Otomatis
-        const commandText = "nmap -sV -sC 103.247.9.138 -target https://kangpepey.com";
-        let i = 0;
-        function typeWriter() {
-            if (i < commandText.length) {
-                document.getElementById("typed-command").innerHTML += commandText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        
-        // Mulai simulasi setelah 1 detik
-        setTimeout(typeWriter, 1000);
-
-        // Simulasi Uptime yang bertambah
-        let minutes = 22;
-        setInterval(() => {
-            minutes++;
-            document.getElementById('uptime').innerText = minutes + " mins";
-        }, 60000);
-    </script>
+<body
 </body>
 </html>
